@@ -17,10 +17,12 @@ app.post('/todos', (req, res) => {
         res.send(doc);
     },
     (e) => {
-        res.send(e);
+        res.status(400).send(e);
     });
 });
 
 app.listen(3000, ()=>{
     console.log("server is running in 3000")
 });
+
+module.exports = {app}
